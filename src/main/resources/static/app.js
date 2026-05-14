@@ -1,6 +1,16 @@
 "use strict";
 
-const PIECE_GLYPHS = { K: "♚", Q: "♛", R: "♜", B: "♝", N: "♞", P: "♟" };
+// Each glyph carries U+FE0E (text presentation selector) so the piece colour
+// comes from CSS. Without it iOS Safari draws the pawn as a fixed black emoji,
+// making white pawns indistinguishable from black ones.
+const PIECE_GLYPHS = {
+    K: "♚︎",
+    Q: "♛︎",
+    R: "♜︎",
+    B: "♝︎",
+    N: "♞︎",
+    P: "♟︎",
+};
 
 const boardEl = document.getElementById("board");
 const statusEl = document.getElementById("status");
