@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot Chess</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main class="app">
+    <h1>Spring Boot Chess</h1>
+    <p class="subtitle">Play against the computer</p>
+
+    <section class="controls">
+        <label>
+            Play as
+            <select id="color-select">
+                <option value="white">White</option>
+                <option value="black">Black</option>
+            </select>
+        </label>
+        <label>
+            Difficulty
+            <select id="difficulty-select">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </label>
+        <button id="new-game-btn" type="button">New Game</button>
+    </section>
+
+    <p id="status" class="status">Loading&hellip;</p>
+
+    <div class="board-wrap">
+        <div id="board" class="board" aria-label="Chess board"></div>
+        <div id="promotion" class="promotion hidden">
+            <p>Promote to:</p>
+            <div class="promotion-options">
+                <button type="button" data-piece="q">&#9819;</button>
+                <button type="button" data-piece="r">&#9820;</button>
+                <button type="button" data-piece="b">&#9821;</button>
+                <button type="button" data-piece="n">&#9822;</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="history">
+        <h2>Moves</h2>
+        <ol id="move-list"></ol>
+    </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>

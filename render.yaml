@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: spring-boot-chess
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      # Keep the JVM heap within the free plan's 512 MB of RAM.
+      - key: JAVA_OPTS
+        value: -Xmx400m -XX:+UseSerialGC
